@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 MAINTAINER rarspace01@gmail.com
 
 RUN apt-get update -y && apt-get upgrade -y
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y firefox wget software-properties-common openjdk-11-jdk gnome-shell geany htop openvpn easy-rsa \
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y firefox wget software-properties-common openjdk-11-jdk ubuntu-gnome-desktop geany htop openvpn easy-rsa \
 	jq \
         python-pip \
         python3-pip \
@@ -59,4 +59,9 @@ WORKDIR /
 
 USER developer
 ENV HOME /home/developer
+# swamp
+CMD curl -L "https://github.com/felixb/swamp/releases/download/v0.8.2/swamp_amd64" --create-dirs -o ~/.local/bin/swamp
+CMD chmod +x  ~/.local/bin/swamp
+CMD PATH=$PATH:~/.local/bin
+# run idea
 CMD /usr/local/bin/idea.sh

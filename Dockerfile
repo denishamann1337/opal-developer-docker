@@ -59,6 +59,8 @@ WORKDIR /
 
 USER developer
 ENV HOME /home/developer
+ENV PATH="${PATH}:~/.local/bin"
+CMD mkdir -p ~/.local/bin
 # swamp
 CMD curl -L "https://github.com/felixb/swamp/releases/download/v0.8.2/swamp_amd64" --create-dirs -o ~/.local/bin/swamp
 CMD chmod +x  ~/.local/bin/swamp

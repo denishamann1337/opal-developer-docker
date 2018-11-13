@@ -1,5 +1,5 @@
 FROM ubuntu:18.04
-MAINTAINER rarspace01@gmail.com
+MAINTAINER rarspace01@github
 
 RUN apt-get update -y && apt-get upgrade -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y firefox wget software-properties-common openjdk-11-jdk ubuntu-gnome-desktop geany htop openvpn easy-rsa \

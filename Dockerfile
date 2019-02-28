@@ -67,7 +67,7 @@ ENV HOME /home/developer
 ENV PATH="${PATH}:/home/developer/.local/bin"
 CMD mkdir -p /home/developer/.local/bin
 # swamp
-CMD curl -L "https://github.com/felixb/swamp/releases/download/v0.8.2/swamp_amd64" --create-dirs -o ~/.local/bin/swamp
+CMD curl -L "https://github.com/felixb/swamp/releases/download/v0.10.0/swamp_amd64" --create-dirs -o ~/.local/bin/swamp
 CMD chmod +x  ~/.local/bin/swamp
 CMD PATH=$PATH:~/.local/bin
 # run idea

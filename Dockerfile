@@ -25,6 +25,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y firefox wget software-prop
 	xrdp \
  && rm -rf /var/lib/apt
 
+RUN chown root:users /etc/xrdp/key.pem
+
 RUN systemctl enable xrdp
 
 #RUN

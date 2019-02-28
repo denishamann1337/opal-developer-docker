@@ -53,7 +53,7 @@ RUN export uid=1000 gid=1000 && \
     chown ${uid}:${gid} -R /home/developer
 
 WORKDIR /tmp
-RUN wget -q 'https://download.jetbrains.com/idea/ideaIU-2018.3.3.tar.gz' && \
+RUN wget -q 'https://download.jetbrains.com/idea/ideaIU-2018.3.4.tar.gz' && \
     tar xzf ideaIU-2018.3.4.tar.gz && rm ideaIU-2018.3.4.tar.gz && \
     mv idea-* /opt/idea && \
     ln -s /opt/idea/bin/idea.sh /usr/local/bin/idea.sh

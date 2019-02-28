@@ -22,7 +22,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install -y firefox wget software-prop
         openssl libssl-dev \
         virtualenv \
         nodejs \
+	xrdp \
  && rm -rf /var/lib/apt
+
+RUN systemctl enable xrdp
 
 #RUN
 RUN pip install --upgrade pip setuptools wheel \
@@ -51,7 +54,7 @@ RUN export uid=1000 gid=1000 && \
 
 WORKDIR /tmp
 RUN wget -q 'https://download.jetbrains.com/idea/ideaIU-2018.3.3.tar.gz' && \
-    tar xzf ideaIU-2018.3.3.tar.gz && rm ideaIU-2018.3.3.tar.gz && \
+    tar xzf ideaIU-2018.3.4.tar.gz && rm ideaIU-2018.3.4.tar.gz && \
     mv idea-* /opt/idea && \
     ln -s /opt/idea/bin/idea.sh /usr/local/bin/idea.sh
 
@@ -66,4 +69,4 @@ CMD curl -L "https://github.com/felixb/swamp/releases/download/v0.8.2/swamp_amd6
 CMD chmod +x  ~/.local/bin/swamp
 CMD PATH=$PATH:~/.local/bin
 # run idea
-CMD /usr/local/bin/idea.sh
+#CMD /usr/local/bin/idea.sh
